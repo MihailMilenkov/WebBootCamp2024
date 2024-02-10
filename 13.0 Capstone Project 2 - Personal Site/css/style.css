@@ -3,3 +3,44 @@
     justify-content: center;
     align-items: center;
 }
+.header-links{
+    font-size: 20px;
+}
+.my-prjects{
+    font-family: 'Playfair Display';
+    text-align: center;
+}
+.header-container{
+    background-color: rgb(100, 136, 169);
+}
+.hero-background{
+    background-color: rgb(100, 136, 169);
+}
+.container{
+    margin-top: 0px;
+}
+.projects-container{
+    display:flex;
+    justify-content: center;
+    max-width: 700;
+    background-color: rgb(48, 195, 107);
+}
+.resume-container{
+    display:flex;
+    justify-content: center;
+    max-width: 700;
+    background-color: rgb(228, 167, 96);
+}
+.im-mihail{
+    font-family: 'Playfair Display';
+}
+.a-programmer{
+    font-family: 'Public Sans';
+}
+.projects{
+    font-family: 'Playfair Display';
+    text-align: center;
+    background-color: rgb(100, 197, 197);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
