@@ -20,6 +20,11 @@ document.querySelector("button").classList.remove("invisible");
 document.querySelector("button").classList.toggle("invisible");
 document.querySelector("button").classList.toggle("invisible");
 document.querySelector("button").classList.toggle("huge");
+document.querySelector("h1").innerHTML = "<em>Hello and Good Bye</em>";
+var attributes = document.querySelector("a").attributes;
+var anchorHref = document.querySelector("a").getAttribute("href");
+document.querySelector("a").setAttribute("href", "https://www.bing.com");
+
 
 // something.doS omething(); method
 // something.something = something; assign property
