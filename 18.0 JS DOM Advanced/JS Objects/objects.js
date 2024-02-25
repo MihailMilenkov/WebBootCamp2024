@@ -18,3 +18,14 @@ var doggo3 = new Dogg(5, "forest hunter", ["doggo4", "doggo5"]);
 console.log(doggo3.age)
 console.log(doggo3.breed)
 console.log(doggo3.children)
+
+function Dogg2(age){
+    this.age = age;
+    this.bark = function() {
+        console.log("BORK BORK");
+    };
+}
+
+var doggo6 = new Dogg2(5);
+doggo6.bark();
+
