@@ -4,15 +4,35 @@ var drumButtonCount = document.querySelectorAll(".drum").length;
 // for (var i = 0; i < drumButtonCount; i++) {
 //     document.querySelectorAll(".drum")[i].addEventListener("click", handleClick);    
 // }
-document.querySelectorAll(".drum")[0].addEventListener("click", handleClickW);  
-document.addEventListener('keydown', (event) => {    
-    if (event.keyCode === 87) {
-        handleClickW();
-    }
-    
-    //alert(event.keyCode);
-    // do something
+document.addEventListener('keyup', (event) => {    
+    switch (event.keyCode) {
+        case 87:
+            handleClickW();
+            break;
+            case 65:
+                handleClickA();
+                break;
+                case 83:
+                    handleClickS();
+                    break;
+                    case 68:
+                        handleClickD();
+                        break;
+                        case 74:
+                            handleClickJ();
+                            break;
+                            case 75:
+                                handleClickK();
+                                break;
+                                case 76:
+                                    handleClickL();
+                                    break;    
+        default:
+            break;
+    }    
+    // alert(event.keyCode);
   }); 
+document.querySelectorAll(".drum")[0].addEventListener("click", handleClickW);  
 document.querySelectorAll(".drum")[1].addEventListener("click", handleClickA);  
 document.querySelectorAll(".drum")[2].addEventListener("click", handleClickS);  
 document.querySelectorAll(".drum")[3].addEventListener("click", handleClickD);  
