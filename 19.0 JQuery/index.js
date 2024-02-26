@@ -18,5 +18,26 @@ if ($("h1").hasClass("margin-50")) {
 $("button").text("Click Fast");
 // $("button").html("<em>Hey</em>");
 
-console.log($("a").attr("href"));
-console.log($("a").attr("class"));
+// console.log($("a").attr("href"));
+// console.log($("a").attr("class"));
+
+$("h1").click(function() {
+    $("h1").css("color", "brown");
+});
+
+$("button").click(function() {    
+    $("h1").css("color", "brown");
+});
+
+$("input").keypress(function(event) {
+    console.log(event.key);
+});
+$(document).keypress(function(event) {
+    $("h1").text(event.key);
+});
+// $("h2").on("mouseover", function() {
+//     $("h2").css("color", "red");
+// });
+// $("h2").on("mouseover", function() {
+//     $("link").trigger("click");
+// });
