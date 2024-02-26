@@ -21,9 +21,9 @@ $("button").text("Click Fast");
 // console.log($("a").attr("href"));
 // console.log($("a").attr("class"));
 
-$("h1").click(function() {
-    $("h1").css("color", "brown");
-});
+// $("h1").click(function() {
+//     $("h1").css("color", "brown");
+// });
 
 $("button").click(function() {    
     $("h1").css("color", "brown");
@@ -38,6 +38,11 @@ $(document).keypress(function(event) {
 // $("h2").on("mouseover", function() {
 //     $("h2").css("color", "red");
 // });
-// $("h2").on("mouseover", function() {
-//     $("link").trigger("click");
-// });
+ $("h1").on("click", function() {
+     $(".link1").trigger("click");
+ });
+$("h2").before("<button>New Button</button>");
+$("h2").after("<button>New Button</button>");
+$("h2").prepend("<button>New Button</button>");
+$("h2").append("<button>New Button</button>");
+// $("button").remove();
