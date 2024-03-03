@@ -7,7 +7,7 @@ var highScore = 0;
 
 $(document).keypress(function(event) { // event.key
     if (!gameIsRunning) {
-        $("h1").text("Level " + level);
+        $("#level-title").text("Level " + level);
         nextSequence();        
         gameIsRunning = true;        
     }
@@ -28,6 +28,7 @@ function checkAnswer(currentLevel){
             // update highscore
             if(gamePattern.length > highScore){
                 highScore = gamePattern.length;
+                $("#high-score").text("Highscore: " + highScore);
             }
 
             setTimeout(function () {
@@ -40,12 +41,13 @@ function checkAnswer(currentLevel){
         playSound(`./sounds/wrong.mp3`);
         level = 0;
         gameIsRunning = false;
+        gamePattern = [];
         $("body").addClass("game-over");
 
         setTimeout(() => {
           $("body").removeClass("game-over");
         }, 100);
-        $("h1").text("Press A Key to Restart");
+        $("#level-title").text("Press A Key to Restart");
     }    
 }
 
@@ -62,7 +64,7 @@ function animatePress(currentColor){
 function nextSequence(){
     userClickedPattern = [];
     level ++;
-    $("h1").text("Level " + level);
+    $("#level-title").text("Level " + level);
     var randomColorIndex =  Math.round(Math.random() * 3);
 
     var randomChosenColour = buttonColours[randomColorIndex];
