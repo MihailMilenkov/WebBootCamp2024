@@ -37,20 +37,23 @@ function checkAnswer(currentLevel){
         }     
     }
     // game over
-    else{
-        playSound(`./sounds/wrong.mp3`);
-        level = 0;
-        gameIsRunning = false;
-        gamePattern = [];
-        $("body").addClass("game-over");
-
-        setTimeout(() => {
-          $("body").removeClass("game-over");
-        }, 100);
-        $("#level-title").text("Press A Key to Restart");
+    else{        
+        restartGame();
     }    
 }
 
+function restartGame() {
+    playSound(`./sounds/wrong.mp3`);
+    level = 0;
+    gameIsRunning = false;
+    gamePattern = [];
+        
+    $("body").addClass("game-over");
+    setTimeout(() => {
+      $("body").removeClass("game-over");
+    }, 100);
+    $("#level-title").text("Press A Key to Restart");
+}
 function animatePress(currentColor){    
     var btn = $("#" + currentColor);
 
