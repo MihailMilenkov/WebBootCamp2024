@@ -18,23 +18,30 @@ $(".btn").click(function(){
     userClickedPattern.push(this.id);
     playSound(`./sounds/${this.id}.mp3`);
     animatePress(this.id);
-    checkAnswer(this.id);
+    checkAnswer(userClickedPattern.length-1);
 });
 
 function checkAnswer(currentLevel){
-    if (gamePattern[currentIndexClicked] == currentLevel) { // check if last click is correct
+    // check if last click is correct
+    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) { 
+        // check if the sequence is correct
         if(gamePattern.length == userClickedPattern.length){
+            // update highscore
+            if(gamePattern.length > highScore){
+                highScore = gamePattern.length;
+            }
 
-            console.log("success");
+            setTimeout(function () {
+                nextSequence();
+            }, 1000;
         }
-        currentIndexClicked++;
+
+        currentIndexClicked++;        
     }else{
         playSound(`./sounds/wrong.mp3`);
         level = 0;
         gameIsRunning = false;
         currentIndexClicked = 0;
-        highScore = gamePattern.length;
-        console.log("wrong");
     }    
 }
 
@@ -49,6 +56,7 @@ function animatePress(currentColor){
 }
 
 function nextSequence(){
+    userClickedPattern = [];
     level ++;
     $("h1").text("Level " + level);
     var randomColorIndex =  Math.round(Math.random() * 3);
@@ -58,6 +66,7 @@ function nextSequence(){
     $("." + randomChosenColour).fadeOut(100).fadeIn(100)
 
     playSound(`./sounds/${randomChosenColour}.mp3`);
+    
 }
 function playSound(sound){
     var audio = new Audio(sound);
