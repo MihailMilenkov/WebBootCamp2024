@@ -3,7 +3,6 @@ var gamePattern = [];
 var userClickedPattern = [];
 var level = 0;
 var gameIsRunning = false;
-var currentIndexClicked = 0;
 var highScore = 0;
 
 $(document).keypress(function(event) { // event.key
@@ -33,15 +32,20 @@ function checkAnswer(currentLevel){
 
             setTimeout(function () {
                 nextSequence();
-            }, 1000;
-        }
-
-        currentIndexClicked++;        
-    }else{
+            }, 1000);
+        }     
+    }
+    // game over
+    else{
         playSound(`./sounds/wrong.mp3`);
         level = 0;
         gameIsRunning = false;
-        currentIndexClicked = 0;
+        $("body").addClass("game-over");
+
+        setTimeout(() => {
+          $("body").removeClass("game-over");
+        }, 100);
+        $("h1").text("Press A Key to Restart");
     }    
 }
 
