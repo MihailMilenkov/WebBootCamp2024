@@ -14,10 +14,13 @@ $(document).keypress(function(event) { // event.key
 });
 
 $(".btn").click(function(){
-    userClickedPattern.push(this.id);
-    playSound(`./sounds/${this.id}.mp3`);
-    animatePress(this.id);
-    checkAnswer(userClickedPattern.length-1);
+    if (gameIsRunning) {
+        
+        userClickedPattern.push(this.id);
+        playSound(`./sounds/${this.id}.mp3`);
+        animatePress(this.id);
+        checkAnswer(userClickedPattern.length-1);
+    }
 });
 
 function checkAnswer(currentLevel){
