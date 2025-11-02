@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
-  // console.log(__dirname + "/public/index.html");
+   //console.log(__dirname + "/public/index.html");
 });
 
 app.post("/submit", (req, res) => {
